@@ -2,10 +2,10 @@
 @model GettingStarted.Pages.Movies.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Movie";
 }
 
-<h1>Create</h1>
+<h1>Create Movie</h1>
 
 <h4>Movie</h4>
 <hr />
@@ -45,5 +45,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
