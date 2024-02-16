@@ -4,6 +4,7 @@ using GettingStarted.Data;
 using System.Text.RegularExpressions;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddRazorPages();
 builder.Services.AddDbContext<GettingStartedMovieContext>(options =>
 {
     if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
