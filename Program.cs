@@ -21,7 +21,7 @@ builder.Services.AddDbContext<GettingStartedMovieContext>(options =>
 
 var app = builder.Build();
 
-AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+// AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 if (!app.Environment.IsDevelopment())
 {

@@ -20,7 +20,7 @@ namespace GettingStarted.Migrations
                         .Annotation("Sqlite:Autoincrement", true)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn),
                     Title = table.Column<string>(type: "TEXT", nullable: true),
-                    ReleaseDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ReleaseDate = table.Column<DateOnly>(type: "DATE", nullable: false),
                     Genre = table.Column<string>(type: "TEXT", nullable: true),
                     Price = table.Column<decimal>(type: "NUMERIC", nullable: false)
                 },
