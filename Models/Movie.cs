@@ -5,8 +5,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace GettingStarted.Models;
 public class Movie
 {
-    [Required]
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
     public string? Title { get; set; }
     [DataType(DataType.Date)]
