@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using GettingStarted.Models;
+using Web.Models;
 
-namespace GettingStarted.Data
+namespace Web.Data
 {
     public class GettingStartedMovieContext : DbContext
     {
-        public GettingStartedMovieContext (DbContextOptions<GettingStartedMovieContext> options)
+        public GettingStartedMovieContext(DbContextOptions<GettingStartedMovieContext> options)
             : base(options)
         {
         }
 
-        public DbSet<GettingStarted.Models.Movie> Movie { get; set; } = default!;
+        public DbSet<Movie> Movie { get; set; } = default!;
     }
 }

@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using GettingStarted.Data;
-using GettingStarted.Models;
+using Web.Models;
+using Web.Data;
 
-namespace GettingStarted.Pages.Movies
+namespace Web.Pages.Movies
 {
     public class DetailsModel : PageModel
     {
-        private readonly GettingStarted.Data.GettingStartedMovieContext _context;
+        private readonly GettingStartedMovieContext _context;
 
-        public DetailsModel(GettingStarted.Data.GettingStartedMovieContext context)
+        public DetailsModel(GettingStartedMovieContext context)
         {
             _context = context;
         }

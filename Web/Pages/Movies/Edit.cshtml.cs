@@ -6,16 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using GettingStarted.Data;
-using GettingStarted.Models;
+using Web.Models;
+using Web.Data;
 
-namespace GettingStarted.Pages.Movies
+namespace Web.Pages.Movies
 {
     public class EditModel : PageModel
     {
-        private readonly GettingStarted.Data.GettingStartedMovieContext _context;
+        private readonly GettingStartedMovieContext _context;
 
-        public EditModel(GettingStarted.Data.GettingStartedMovieContext context)
+        public EditModel(GettingStartedMovieContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace GettingStarted.Pages.Movies
                 return NotFound();
             }
 
-            var movie =  await _context.Movie.FirstOrDefaultAsync(m => m.Id == id);
+            var movie = await _context.Movie.FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {
                 return NotFound();
