@@ -9,13 +9,13 @@ using Microsoft.EntityFrameworkCore;
 using GettingStarted.Data;
 using GettingStarted.Models;
 
-namespace GettingStarted.Pages.Movies
+namespace GettingStarted.Frontend.Pages.Movies
 {
     public class EditModel : PageModel
     {
-        private readonly GettingStarted.Data.GettingStartedMovieContext _context;
+        private readonly GettingStartedMovieContext _context;
 
-        public EditModel(GettingStarted.Data.GettingStartedMovieContext context)
+        public EditModel(GettingStartedMovieContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace GettingStarted.Pages.Movies
                 return NotFound();
             }
 
-            var movie =  await _context.Movie.FirstOrDefaultAsync(m => m.Id == id);
+            var movie = await _context.Movie.FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {
                 return NotFound();

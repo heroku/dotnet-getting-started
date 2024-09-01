@@ -8,18 +8,18 @@ using Microsoft.EntityFrameworkCore;
 using GettingStarted.Data;
 using GettingStarted.Models;
 
-namespace GettingStarted.Pages.Movies
+namespace GettingStarted.Frontend.Pages.Movies
 {
     public class IndexModel : PageModel
     {
-        private readonly GettingStarted.Data.GettingStartedMovieContext _context;
+        private readonly GettingStartedMovieContext _context;
 
-        public IndexModel(GettingStarted.Data.GettingStartedMovieContext context)
+        public IndexModel(GettingStartedMovieContext context)
         {
             _context = context;
         }
 
-        public IList<Movie> Movie { get;set; } = default!;
+        public IList<Movie> Movie { get; set; } = default!;
 
         public async Task OnGetAsync()
         {

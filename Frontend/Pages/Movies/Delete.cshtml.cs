@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using GettingStarted.Data;
 using GettingStarted.Models;
 
-namespace GettingStarted.Pages.Movies
+namespace GettingStarted.Frontend.Pages.Movies
 {
     public class DeleteModel : PageModel
     {
-        private readonly GettingStarted.Data.GettingStartedMovieContext _context;
+        private readonly GettingStartedMovieContext _context;
 
-        public DeleteModel(GettingStarted.Data.GettingStartedMovieContext context)
+        public DeleteModel(GettingStartedMovieContext context)
         {
             _context = context;
         }

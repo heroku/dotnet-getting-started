@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using GettingStarted.Data;
 using GettingStarted.Models;
 
-namespace GettingStarted.Pages.Movies
+namespace GettingStarted.Frontend.Pages.Movies
 {
     public class DetailsModel : PageModel
     {
-        private readonly GettingStarted.Data.GettingStartedMovieContext _context;
+        private readonly GettingStartedMovieContext _context;
 
-        public DetailsModel(GettingStarted.Data.GettingStartedMovieContext context)
+        public DetailsModel(GettingStartedMovieContext context)
         {
             _context = context;
         }
