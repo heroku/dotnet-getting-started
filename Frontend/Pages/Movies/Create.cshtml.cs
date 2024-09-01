@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using GettingStarted.Data;
 using GettingStarted.Models;
 
-namespace GettingStarted.Pages.Movies
+namespace GettingStarted.Frontend.Pages.Movies
 {
     public class CreateModel : PageModel
     {
-        private readonly GettingStarted.Data.GettingStartedMovieContext _context;
+        private readonly GettingStartedMovieContext _context;
 
-        public CreateModel(GettingStarted.Data.GettingStartedMovieContext context)
+        public CreateModel(GettingStartedMovieContext context)
         {
             _context = context;
         }

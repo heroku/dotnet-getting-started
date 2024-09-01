@@ -9,11 +9,11 @@ namespace GettingStarted.Data
 {
     public class GettingStartedMovieContext : DbContext
     {
-        public GettingStartedMovieContext (DbContextOptions<GettingStartedMovieContext> options)
+        public GettingStartedMovieContext(DbContextOptions<GettingStartedMovieContext> options)
             : base(options)
         {
         }
 
-        public DbSet<GettingStarted.Models.Movie> Movie { get; set; } = default!;
+        public DbSet<Movie> Movie { get; set; } = default!;
     }
 }
