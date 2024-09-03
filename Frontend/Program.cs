@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Text.RegularExpressions;
@@ -5,6 +6,10 @@ using GettingStarted.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+});
 builder.Services.AddDbContext<GettingStartedMovieContext>(options =>
 {
     if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
@@ -19,6 +24,8 @@ builder.Services.AddDbContext<GettingStartedMovieContext>(options =>
 });
 
 var app = builder.Build();
+
+app.UseForwardedHeaders();
 
 if (!app.Environment.IsDevelopment())
 {
