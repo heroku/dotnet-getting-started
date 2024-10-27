@@ -26,6 +26,6 @@
   </Target>
   <Target Name="PostPublishStep" AfterTargets="Publish">
     <!-- Publish the migration bundle as an executable -->
-    <Exec Command="dotnet ef migrations bundle --output $(PublishDir)/efbundle --force"  />
+    <Exec Command="dotnet ef migrations bundle --output $(PublishDir)/efbundle --force" />
   </Target>
 </Project>
