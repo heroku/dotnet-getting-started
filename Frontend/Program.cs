@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using System.Text.RegularExpressions;
 using GettingStarted.Data;
 var builder = WebApplication.CreateBuilder(args);
