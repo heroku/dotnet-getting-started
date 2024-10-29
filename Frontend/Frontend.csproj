@@ -22,8 +22,9 @@
   </ItemGroup>
 
   <Target Name="PostPublishStep" AfterTargets="Publish">
+    <Message Text="Restoring .NET tools" Importance="High" />
     <Exec Command="dotnet tool restore" />
-    <!-- Publish the migration bundle as an executable -->
+    <Message Text="Publishing executable database migration bundle" Importance="High" />
     <Exec Command="dotnet ef migrations bundle --output $(PublishDir)/efbundle --force"  />
   </Target>
 
