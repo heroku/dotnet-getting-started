@@ -21,10 +21,8 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
   </ItemGroup>
 
-  <Target Name="PreBuildStep" BeforeTargets="Build">
-    <Exec Command="dotnet tool restore" />
-  </Target>
   <Target Name="PostPublishStep" AfterTargets="Publish">
+    <Exec Command="dotnet tool restore" />
     <!-- Publish the migration bundle as an executable -->
     <Exec Command="dotnet ef migrations bundle --output $(PublishDir)/efbundle --force"  />
   </Target>
