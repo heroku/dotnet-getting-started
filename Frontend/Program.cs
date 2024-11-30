@@ -6,13 +6,18 @@ using GettingStarted.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
+var isHeroku = Environment.GetEnvironmentVariable("DYNO") != null;
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
     options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    if (isHeroku)
+    {
+        options.KnownNetworks.Clear();
+        options.KnownProxies.Clear();
+    }
 });
 builder.Services.AddHttpsRedirection(options =>
 {
-    var isHeroku = Environment.GetEnvironmentVariable("DYNO") != null;
     if (isHeroku)
     {
         options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
