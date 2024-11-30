@@ -10,6 +10,14 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
     options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
 });
+builder.Services.AddHttpsRedirection(options =>
+{
+    var isHeroku = Environment.GetEnvironmentVariable("DYNO") != null;
+    if (isHeroku)
+    {
+        options.HttpsPort = 443;
+    };
+});
 builder.Services.AddDbContext<GettingStartedMovieContext>(options =>
 {
     var match = Regex.Match(Environment.GetEnvironmentVariable("DATABASE_URL") ?? "", @"postgres://(.*):(.*)@(.*):(.*)/(.*)");
