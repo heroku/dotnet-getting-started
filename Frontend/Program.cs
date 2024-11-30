@@ -15,6 +15,7 @@ builder.Services.AddHttpsRedirection(options =>
     var isHeroku = Environment.GetEnvironmentVariable("DYNO") != null;
     if (isHeroku)
     {
+        options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
         options.HttpsPort = 443;
     };
 });
