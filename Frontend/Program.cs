@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
@@ -32,6 +33,7 @@ if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DATABASE_URL")))
         var match = Regex.Match(Environment.GetEnvironmentVariable("DATABASE_URL")!, @"postgres://(.*):(.*)@(.*):(.*)/(.*)");
         options.UseNpgsql($"Server={match.Groups[3]};Port={match.Groups[4]};User Id={match.Groups[1]};Password={match.Groups[2]};Database={match.Groups[5]};sslmode=Prefer;Trust Server Certificate=true");
     });
+    builder.Services.AddDataProtection().PersistKeysToDbContext<GettingStartedMovieContext>().SetDefaultKeyLifetime(TimeSpan.FromDays(7));
 }
 
 var app = builder.Build();
