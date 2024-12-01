@@ -25,7 +25,7 @@
     <Message Text="Restoring .NET tools" Importance="High" />
     <Exec Command="dotnet tool restore" />
     <Message Text="Publishing executable database migration bundle" Importance="High" />
-    <Exec Command="dotnet ef migrations bundle --output $(PublishDir)/efbundle --force"  />
+    <Exec Command="DATABASE_URL=foo dotnet ef migrations bundle --output $(PublishDir)/efbundle --force"  />
   </Target>
 
 </Project>

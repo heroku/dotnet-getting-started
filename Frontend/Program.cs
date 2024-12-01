@@ -24,11 +24,15 @@ builder.Services.AddHttpsRedirection(options =>
         options.HttpsPort = 443;
     };
 });
-builder.Services.AddDbContext<GettingStartedMovieContext>(options =>
+
+if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DATABASE_URL")))
 {
-    var match = Regex.Match(Environment.GetEnvironmentVariable("DATABASE_URL") ?? "", @"postgres://(.*):(.*)@(.*):(.*)/(.*)");
-    options.UseNpgsql($"Server={match.Groups[3]};Port={match.Groups[4]};User Id={match.Groups[1]};Password={match.Groups[2]};Database={match.Groups[5]};sslmode=Prefer;Trust Server Certificate=true");
-});
+    builder.Services.AddDbContext<GettingStartedMovieContext>(options =>
+    {
+        var match = Regex.Match(Environment.GetEnvironmentVariable("DATABASE_URL")!, @"postgres://(.*):(.*)@(.*):(.*)/(.*)");
+        options.UseNpgsql($"Server={match.Groups[3]};Port={match.Groups[4]};User Id={match.Groups[1]};Password={match.Groups[2]};Database={match.Groups[5]};sslmode=Prefer;Trust Server Certificate=true");
+    });
+}
 
 var app = builder.Build();
 
