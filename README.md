@@ -17,7 +17,7 @@ By default, apps use Eco dynos if you are subscribed to Eco. Otherwise, it defau
 
 Eligible students can apply for platform credits through our new [Heroku for GitHub Students program](https://blog.heroku.com/github-student-developer-program).
 
-```term
+```
 git clone https://github.com/heroku/dotnet-getting-started
 cd dotnet-getting-started
 heroku create --buildpack heroku/dotnet
@@ -31,7 +31,7 @@ By default, apps on [Fir](https://devcenter.heroku.com/articles/generations#fir)
 [create a private space](https://devcenter.heroku.com/articles/working-with-private-spaces#create-a-private-space)
 first.
 
-```term
+```
 git clone https://github.com/heroku/dotnet-getting-started
 cd dotnet-getting-started
 heroku create --space <space-name>
