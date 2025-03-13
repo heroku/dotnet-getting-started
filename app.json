@@ -12,5 +12,8 @@
         {
             "url": "heroku/dotnet"
         }
+    ],
+    "addons": [
+        "heroku-postgresql"
     ]
 }
