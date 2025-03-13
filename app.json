@@ -1,0 +1,16 @@
+{
+    "name": "Start on Heroku: .NET",
+    "description": "A barebones ASP.NET Core app, which can easily be deployed to Heroku.",
+    "repository": "https://github.com/heroku/dotnet-getting-started",
+    "website": "https://devcenter.heroku.com/articles/getting-started-with-dotnet",
+    "keywords": [
+        "dotnet",
+        "blazor",
+        "aspnetcore"
+    ],
+    "buildpacks": [
+        {
+            "url": "heroku/dotnet"
+        }
+    ]
+}
