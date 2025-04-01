@@ -7,10 +7,5 @@
         "dotnet",
         "blazor",
         "aspnetcore"
-    ],
-    "buildpacks": [
-        {
-            "url": "heroku/dotnet"
-        }
     ]
 }
