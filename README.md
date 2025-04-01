@@ -20,7 +20,7 @@ Eligible students can apply for platform credits through our new [Heroku for Git
 ```
 git clone https://github.com/heroku/dotnet-getting-started
 cd dotnet-getting-started
-heroku create --buildpack heroku/dotnet
+heroku create
 git push heroku main
 heroku open
 ```
