@@ -1,0 +1,16 @@
+[_]
+schema-version = "0.2"
+
+[io.buildpacks]
+# Exclude files from local Pack CLI builds, where .gitignore doesn't apply.
+
+exclude = [
+  ".git",
+  ".gitignore",
+  ".gitattributes",
+  ".github",
+  ".DS_Store",
+  ".env",
+  "bin/",
+  "obj/"
+]
