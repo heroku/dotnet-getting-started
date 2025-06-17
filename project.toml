@@ -3,6 +3,8 @@ schema-version = "0.2"
 
 [io.buildpacks]
 # Exclude files from local Pack CLI builds, where .gitignore doesn't apply.
+# TODO: Change the `bin` and `obj` entries below to include trailing slash when
+# directories are properly excluded (see https://github.com/buildpacks/pack/issues/2402).
 
 exclude = [
   ".git",
@@ -11,6 +13,6 @@ exclude = [
   ".github",
   ".DS_Store",
   ".env",
-  "bin/",
-  "obj/"
+  "bin",
+  "obj"
 ]
