@@ -46,4 +46,6 @@ app.UseRouting();
 
 app.MapRazorPages();
 
+app.MapGet("/hello", () => $"Hello from {Environment.GetEnvironmentVariable("HELLO_FROM")}!");
+
 app.Run();

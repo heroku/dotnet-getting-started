@@ -5,4 +5,4 @@ web: cd Frontend/bin/publish/; ./Frontend --urls http://*:$PORT
 # using Heroku's Release Phase feature:
 # https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/applying?tabs=dotnet-core-cli#efbundle
 # https://devcenter.heroku.com/articles/release-phase
-# release: Frontend/bin/publish/efbundle
+release: Frontend/bin/publish/efbundle
