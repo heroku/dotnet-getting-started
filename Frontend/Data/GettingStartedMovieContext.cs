@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using GettingStarted.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GettingStarted.Data
 {
