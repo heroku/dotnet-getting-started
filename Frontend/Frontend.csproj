@@ -5,9 +5,11 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>GettingStarted.Frontend</RootNamespace>
+    <NuGetAuditMode>all</NuGetAuditMode>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Build" Version="17.8.43" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.21">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -19,11 +21,12 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
 
   <Target Name="PostPublishStep" AfterTargets="Publish">
     <Message Text="Publishing executable database migration bundle" Importance="High" />
-    <Exec Command="dotnet ef migrations bundle --output $(PublishDir)/efbundle --force"  />
+    <Exec Command="dotnet ef migrations bundle --output $(PublishDir)/efbundle --force" />
   </Target>
 
 </Project>
