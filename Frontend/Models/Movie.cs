@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GettingStarted.Models;
+
 public class Movie
 {
     public int Id { get; set; }

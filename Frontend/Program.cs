@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 using GettingStarted.Data;
+using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +22,7 @@ builder.Services.AddHttpsRedirection(options =>
     {
         options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
         options.HttpsPort = 443;
-    };
+    }
 });
 builder.Services.AddDbContext<GettingStartedMovieContext>(options =>
 {
