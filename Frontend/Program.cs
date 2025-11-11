@@ -22,7 +22,7 @@ builder.Services.AddHttpsRedirection(options =>
     {
         options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
         options.HttpsPort = 443;
-    };
+    }
 });
 builder.Services.AddDbContext<GettingStartedMovieContext>(options =>
 {
