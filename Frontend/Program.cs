@@ -1,11 +1,13 @@
 using System.Text.RegularExpressions;
 using GettingStarted.Data;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
+builder.Services.AddDataProtection().UseEphemeralDataProtectionProvider();
 var isHeroku = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DYNO"));
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
